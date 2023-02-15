@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import "./Home.css"
-import { toast } from 'react-toastify'
+// import { toast } from 'react-toastify'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 
 const Home = () => {
     const [data, setData] = useState([]);
@@ -16,9 +17,20 @@ const Home = () => {
         loadData();
     }, []);
 
+    const deleteContact = (id) => {
+        if (window.confirm("Are you sure that you wanted to delete contact")) {
+            axios.delete(`http://localhost:5000/api/remove/${id}`);
+            toast.success("Contact deleted successfully");
+            setTimeout(() => loadData(), 500);
+        }
+    }
+
     return (
-        <div className='mt-36'>
-            <table className='table'>
+        <div className='container mt-5'>
+            <Link to="/addContact">
+                <button className='btn btn-primary my-2'>Add Contact</button>
+            </Link>
+            <table className='table table-bordered border-primary'>
                 <thead>
                     <tr>
                         <th className='text-center'>No.</th>
@@ -38,16 +50,19 @@ const Home = () => {
                                 <td>{item.contact}</td>
                                 <td>
                                     <Link to={`/update/${item.id}`}>
-                                        <button type='button' className='btn'></button>
+                                        <button type='button' className='btn btn-primary'>Edit</button>
                                     </Link>
-                                    <button type="button" className='btn btn-danger'></button>
+                                    <button type="button" className='btn btn-danger mx-1' onClick={() => deleteContact(item.id)}>Delete</button>
+                                    <Link to={`/view/${item.id}`}>
+                                        <button type='button' className='btn btn-success'>View</button>
+                                    </Link>
                                 </td>
                             </tr>
                         )
                     })}
                 </tbody>
             </table>
-        </div>
+        </div >
     )
 }
 
