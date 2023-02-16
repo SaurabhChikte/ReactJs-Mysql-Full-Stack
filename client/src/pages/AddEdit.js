@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 const initialState = {
     name: "",
     email: "",
-    contact: ""
+    contact: "",
 }
 
 const AddEdit = () => {
@@ -35,12 +35,12 @@ const AddEdit = () => {
                 }).then(() => {
                     setState({ name: "", email: "", contact: "" })
                 }).catch((err) => toast.error(err.response.data));
-                toast.success("Contact added successfully..!")
+                toast.success("Contact added successfully..!");
             } else {
                 axios.put(`http://localhost:5000/api/update/${id}`, {
                     name,
                     email,
-                    contact
+                    contact,
                 }).then(() => {
                     setState({ name: "", email: "", contact: "" })
                 }).catch((err) => toast.error(err.response.data));

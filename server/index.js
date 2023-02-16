@@ -24,7 +24,7 @@ app.get("/api/get", (req, res) => {
 
 app.post("/api/post", (req, res) => {
     const { name, email, contact } = req.body;
-    const sqlInsert = "INSERT INTO `contact_db` (`name`, `email`, `contact`) VALUES ( ?, ?, ?)";
+    const sqlInsert = "INSERT INTO contact_db (name, email, contact) VALUES ( ?, ?, ?)";
     db.query(sqlInsert, [name, email, contact], (error, result) => {
         if (error) {
             console.log(error);
@@ -65,15 +65,6 @@ app.put("/api/update/:id", (req, res) => {
     });
 });
 
-
-app.get("/", (req, res) => {
-    // const sqlInsert = "INSERT INTO `contact_db` (`id`, `name`, `email`, `contact`) VALUES ('2', 'saurabh', 'saurabhs@gmail.com', '08459113491')";
-    // db.query(sqlInsert, (error, result) => {
-    //     console.log("error", error);
-    //     console.log("result", result);
-    //     res.send("Hello Express");
-    // });
-});
 
 app.listen(5000, () => {
     console.log("Server is running on port 5000");
