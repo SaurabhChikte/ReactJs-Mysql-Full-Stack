@@ -77,7 +77,7 @@ const AddEdit = () => {
                 </div>
             </form>
         </div>
-    )
+    );
 }
 
 export default AddEdit
