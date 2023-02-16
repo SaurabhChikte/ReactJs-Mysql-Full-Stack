@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Home from './pages/Home';
 import AddEdit from './pages/AddEdit';
+import View from './pages/View';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/addContact" component={AddEdit} />
           <Route exact path="/update/:id" component={AddEdit} />
+          <Route exact path="/view/:id" component={View} />
         </Switch>
       </div>
     </BrowserRouter>
