@@ -48,7 +48,7 @@ const Home = () => {
                                 <td>{item.name}</td>
                                 <td>{item.email}</td>
                                 <td>{item.contact}</td>
-                                <td>
+                                <td className='text-center'>
                                     <Link to={`/update/${item.id}`}>
                                         <button type='button' className='btn btn-primary'>Edit</button>
                                     </Link>
