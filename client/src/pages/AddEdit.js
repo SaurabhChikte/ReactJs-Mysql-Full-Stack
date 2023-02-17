@@ -59,7 +59,7 @@ const AddEdit = () => {
             <form className='p-3 border'>
                 <div className='form-group'>
                     <label htmlFor="name">Name</label>
-                    <input className='form-control' type="text" name="name" id="name" placeholder="Your Name" value={name || ""} onChange={handleInputChange} />
+                    <input className='form-control' type="text" name="name" id="name" placeholder="Your name" value={name || ""} onChange={handleInputChange} />
                 </div>
                 <div className='form-group'>
                     <label htmlFor="email">Email</label>
@@ -77,7 +77,7 @@ const AddEdit = () => {
                 </div>
             </form>
         </div>
-    )
+    );
 }
 
 export default AddEdit
