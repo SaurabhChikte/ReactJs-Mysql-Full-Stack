@@ -56,7 +56,7 @@ const AddEdit = () => {
     };
     return (
         <div className='mt-5 w-25 m-auto'>
-            <form className='p-3 border' onClick={handleSubmit}>
+            <form className='p-3 border'>
                 <div className='form-group'>
                     <label htmlFor="name">Name</label>
                     <input className='form-control' type="text" name="name" id="name" placeholder="Your Name" value={name || ""} onChange={handleInputChange} />
@@ -70,7 +70,7 @@ const AddEdit = () => {
                     <input className='form-control' type="number" name="contact" id="contact" placeholder="Your contact" value={contact || ""} onChange={handleInputChange} />
                 </div>
                 <div className='my-3'>
-                    <input type="submit" className='btn btn-primary m-1' value={id ? "Update" : "Save"} />
+                    <input type="submit" className='btn btn-primary m-1' value={id ? "Update" : "Save"} onClick={handleSubmit} />
                     <Link to="/">
                         <input type="button" className='btn btn-secondary' value="Go back" />
                     </Link>
