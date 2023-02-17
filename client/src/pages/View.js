@@ -13,23 +13,23 @@ const View = () => {
     }, [id])
 
     return (
-        <div className='container justify-content-center mt-5'>
+        <div className='container mt-5 w-50 m-auto'>
             <div className='card'>
-                <div className='card-header text-center'>
+                <div className='card-header'>
                     <p>User Contact Detail</p>
                 </div>
-                <div className='card-body text-center'>
+                <div className='card-body'>
                     <strong>ID:</strong>
-                    <span>{id}</span>
+                    <span> {id}</span>
                     <br />
                     <strong>Name:</strong>
-                    <span>{user.name}</span>
+                    <span> {user.name}</span>
                     <br />
                     <strong>Email:</strong>
-                    <span>{user.email}</span>
+                    <span> {user.email}</span>
                     <br />
                     <strong>Contact:</strong>
-                    <span>{user.contact}</span>
+                    <span> {user.contact}</span>
                     <br />
                     <Link to="/">
                         <div className='btn btn-darks'></div>
