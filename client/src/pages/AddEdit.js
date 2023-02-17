@@ -70,7 +70,7 @@ const AddEdit = () => {
                     <input className='form-control' type="number" name="contact" id="contact" placeholder="Your contact" value={contact || ""} onChange={handleInputChange} />
                 </div>
                 <div className='my-3'>
-                    <input type="submit" className='btn btn-primary m-1' onClick={handleSubmit} value={id ? "Update" : "Save"} />
+                    <input type="submit" className='btn btn-primary m-1' value={id ? "Update" : "Save"} onClick={handleSubmit} />
                     <Link to="/">
                         <input type="button" className='btn btn-secondary' value="Go back" />
                     </Link>
